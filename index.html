@@ -56,7 +56,8 @@
     <div class="hero__inner">
       <div class="hero__text">
         <p class="pill pill--light">小規模事業者・個人事業主・クリニック・店舗のための</p>
-        <h1 id="hero-title" class="hero__title">ホームページのこと、<br>考えるところから<br>任せてください。</h1>
+        {#- 見出しは _data/home.json（Pages CMS で編集可）から読み込み。改行は <br> に変換 #}
+        <h1 id="hero-title" class="hero__title">{{ home.hero.title | nl2br | safe }}</h1>
         <p class="hero__lead">「何を載せればいいか分からない」「自分で作る時間がない」。そんな方のために、企画・構成から文章づくり、デザイン、スマホ対応、公開までまとめてお引き受けします。</p>
         <p class="hero__catch">お客様がすることは、話す・渡す・確認するだけ。</p>
         <div class="hero__buttons">
@@ -66,7 +67,8 @@
         <p class="hero__prices">START 98,000円 / STANDARD 198,000円 / PRO 298,000円〜</p>
       </div>
       <div class="hero__media">
-        <img src="/assets/images/hero.jpg" alt="事業について相談している様子" width="1200" height="800" fetchpriority="high">
+        {#- 写真は _data/home.json（Pages CMS で差し替え可）から読み込み #}
+        <img src="{{ home.hero.image }}" alt="事業について相談している様子" width="1200" height="800" fetchpriority="high">
       </div>
     </div>
   </section>

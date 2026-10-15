@@ -1,0 +1,7 @@
+# Eleventy がテンプレートとして処理しないファイル
+README.md
+serve.ps1
+404.html
+node_modules/
+_site/
+.claude/

@@ -1,0 +1,29 @@
+# Pages CMS 設定ファイル（https://pagescms.org/docs/configuration/）
+# 現在はテスト用として「トップページの見出し」と「トップページの写真」だけを編集できます。
+
+media:
+  input: assets/images      # 画像を保存するフォルダ（リポジトリ内）
+  output: /assets/images    # サイト上での画像のパス
+  categories: [image]       # 画像ファイルのみ扱う
+
+content:
+  - name: home
+    label: トップページ
+    type: file
+    path: _data/home.json
+    format: json
+    fields:
+      - name: hero
+        label: ページ最上部（メインビジュアル）
+        type: object
+        fields:
+          - name: title
+            label: メイン見出し
+            description: 改行した位置が、そのままサイト上の改行になります。
+            type: text
+            required: true
+          - name: image
+            label: メイン写真
+            description: 横長の写真（目安 1200×800px、3:2）がきれいに表示されます。
+            type: image
+            required: true
